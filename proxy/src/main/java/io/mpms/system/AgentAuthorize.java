@@ -22,5 +22,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AgentAuthorize {
 
-
+    private static AgentAuthorize agentAuthorize;
+    /**
+     * 账号
+     */
+    @Value("${" + ConfigBean.AUTHORIZE_USER_KEY + "}")
+    private String agentName;
+    /**
+     * 密码
+     */
+    @Value("${" + ConfigBean.AUTHORIZE_PWD_KEY + ":}")
+    private String agentPwd;
+    /**
+     * 授权加密字符串
+     */
+    private String authorize;
 }
