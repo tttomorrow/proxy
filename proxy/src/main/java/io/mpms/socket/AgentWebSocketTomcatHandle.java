@@ -28,5 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
 
+    private TomcatEditService tomcatEditService;
 
+    private static final Map<String, File> CACHE_FILE = new ConcurrentHashMap<>();
 }
