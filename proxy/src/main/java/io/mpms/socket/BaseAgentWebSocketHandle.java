@@ -23,6 +23,6 @@ import static javax.websocket.CloseReason.CloseCodes.CANNOT_ACCEPT;
  *
  */
 public abstract class BaseAgentWebSocketHandle {
-
+    private static final ConcurrentHashMap<String, String> USER = new ConcurrentHashMap<>();
 
 }

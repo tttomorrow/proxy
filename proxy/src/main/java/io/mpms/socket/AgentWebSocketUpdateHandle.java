@@ -25,5 +25,5 @@ import java.util.Map;
 @Component
 public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
 
-
+    private static final Map<String, UploadFileModel> UPLOAD_FILE_INFO = new HashMap<>();
 }
