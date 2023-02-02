@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
  * 自动记录日志
  *
  */
+@Aspect
+@Component
 public class AgentAopLog {
-
+    String NodeIp = null;
 }
 
