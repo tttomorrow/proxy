@@ -99,4 +99,21 @@ public class AgentExtConfigBean {
         return serverToken;
     }
 
+    /**
+     * 获取当前的url
+     *
+     * @return 如果没有配置将自动生成：http://+本地IP+端口
+     */
+    public String getAgentUrl() {
+        if (StrUtil.isEmpty(agentUrl)) {
+            String localhostStr = NetUtil.getLocalhostStr();
+            int port = ConfigBean.getInstance().getPort();
+            agentUrl = String.format("http://%s:%s", localhostStr, port);
+        }
+        if (StrUtil.isEmpty(agentUrl)) {
+            throw new LinuxRuntimeException("获取Agent url失败");
+        }
+        return agentUrl;
+    }
+
 }
