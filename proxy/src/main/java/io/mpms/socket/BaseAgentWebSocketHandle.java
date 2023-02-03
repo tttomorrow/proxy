@@ -25,4 +25,10 @@ import static javax.websocket.CloseReason.CloseCodes.CANNOT_ACCEPT;
 public abstract class BaseAgentWebSocketHandle {
     private static final ConcurrentHashMap<String, String> USER = new ConcurrentHashMap<>();
 
+
+    protected String getParameters(Session session, String name) {
+        Map<String, List<String>> pathParameters = session.getRequestParameterMap();
+        List<String> strings = pathParameters.get(name);
+        return CollUtil.join(strings, StrUtil.COMMA);
+    }
 }
