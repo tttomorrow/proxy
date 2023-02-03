@@ -17,5 +17,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class AgentAopLog {
     String NodeIp = null;
+
+    @Pointcut("execution(public * io.jpom.controller..*.*(..))")
+    public void AgentLog() {
+
+    }
 }
 
