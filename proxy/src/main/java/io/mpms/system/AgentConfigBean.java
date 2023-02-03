@@ -59,4 +59,16 @@ public class AgentConfigBean {
     public static final String JDK_CONF = "jdk_conf.json";
 
     private static AgentConfigBean agentConfigBean;
+
+    /**
+     * 单利模式
+     *
+     * @return config
+     */
+    public static AgentConfigBean getInstance() {
+        if (agentConfigBean == null) {
+            agentConfigBean = SpringUtil.getBean(AgentConfigBean.class);
+        }
+        return agentConfigBean;
+    }
 }
