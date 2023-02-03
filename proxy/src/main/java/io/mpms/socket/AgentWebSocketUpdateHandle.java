@@ -26,4 +26,13 @@ import java.util.Map;
 public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
 
     private static final Map<String, UploadFileModel> UPLOAD_FILE_INFO = new HashMap<>();
+
+    @OnOpen
+    public void onOpen(Session session) {
+        if (super.checkAuthorize(session)) {
+            return;
+        }
+        session.setMaxBinaryMessageBufferSize(1024 * 1024);
+
+    }
 }
