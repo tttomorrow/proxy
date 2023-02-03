@@ -21,4 +21,8 @@ public class AgentFileTailWatcher<T> extends BaseFileTailWatcher<T> {
     private AgentFileTailWatcher(File logFile) throws IOException {
         super(logFile);
     }
+
+    public static int getOneLineCount() {
+        return CONCURRENT_HASH_MAP.size();
+    }
 }
