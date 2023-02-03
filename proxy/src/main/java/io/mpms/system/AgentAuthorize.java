@@ -37,4 +37,24 @@ public class AgentAuthorize {
      * 授权加密字符串
      */
     private String authorize;
+
+
+    /**
+     * 单例
+     *
+     * @return this
+     */
+    public static AgentAuthorize getInstance() {
+        if (agentAuthorize == null) {
+            agentAuthorize = SpringUtil.getBean(AgentAuthorize.class);
+            // 登录名不能为空
+            if (StrUtil.isEmpty(agentAuthorize.agentName)) {
+                throw new LinuxRuntimeException("proxy端登录名不能为空");
+            }
+            agentAuthorize.checkPwd();
+            // 生成密码授权字符串
+            agentAuthorize.authorize = SecureUtil.sha1(agentAuthorize.agentName + "@" + agentAuthorize.agentPwd);
+        }
+        return agentAuthorize;
+    }
 }
