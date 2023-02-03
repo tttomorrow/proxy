@@ -24,6 +24,44 @@ import java.util.List;
  */
 @PreLoadClass
 public class AutoBackLog {
+    private static final String ID = "auto_back_log";
+    private static ProjectInfoService projectInfoService;
 
+    private static FileSize MAX_SIZE;
+
+    @PreLoadMethod
+    private static void startAutoBackLog() {
+        if (projectInfoService == null) {
+            projectInfoService = SpringUtil.getBean(ProjectInfoService.class);
+        }
+        // 获取cron 表达式
+        String cron = StrUtil.emptyToDefault(AgentExtConfigBean.getInstance().autoBackConsoleCron, "none");
+        if ("none".equalsIgnoreCase(cron.trim())) {
+            cron = "0 0/10 * * * ?";
+        }
+        String size = StrUtil.emptyToDefault(AgentExtConfigBean.getInstance().autoBackSize, "50MB");
+        MAX_SIZE = FileSize.valueOf(size.trim());
+
+        CronUtil.schedule(ID, cron, () -> {
+            try {
+                List<ProjectInfoModel> list = projectInfoService.list();
+                if (list == null) {
+                    return;
+                }
+                list.forEach(projectInfoModel -> {
+                    checkProject(projectInfoModel, null);
+
+                    List<ProjectInfoModel.JavaCopyItem> javaCopyItemList = projectInfoModel.getJavaCopyItemList();
+                    if (javaCopyItemList == null) {
+                        return;
+                    }
+                    javaCopyItemList.forEach(javaCopyItem -> checkProject(projectInfoModel, javaCopyItem));
+                });
+            } catch (Exception e) {
+                DefaultSystemLog.getLog().error("定时备份日志失败", e);
+            }
+        });
+        CronUtils.start();
+    }
 
 }
