@@ -22,5 +22,11 @@ public class AgentAopLog {
     public void AgentLog() {
 
     }
+
+    @Before("AgentLog()")
+    public void doBefore(JoinPoint joinPoint) {
+        String ip = BaseAgentController.getAgentIp();
+        NodeIp = ip;
+    }
 }
 
