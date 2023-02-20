@@ -57,4 +57,12 @@ public class AgentAuthorize {
         }
         return agentAuthorize;
     }
+
+    public String getAgentName() {
+        return agentName;
+    }
+
+    public String getAgentPwd() {
+        return agentPwd;
+    }
 }
