@@ -59,4 +59,26 @@ public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
             }
         }
     }
+
+    @OnMessage
+    public void onMessage(String message, Session session) throws Exception {
+        JSONObject json = JSONObject.parseObject(message);
+        String op = json.getString("op");
+        ConsoleCommandOp consoleCommandOp = ConsoleCommandOp.valueOf(op);
+        if (consoleCommandOp == ConsoleCommandOp.heart) {
+            return;
+        }
+        String tomcatId = json.getString("tomcatId");
+        if (JpomApplication.SYSTEM_ID.equalsIgnoreCase(tomcatId)) {
+            runMsg(session, json);
+        } else {
+            TomcatInfoModel tomcatInfoModel = tomcatEditService.getItem(tomcatId);
+            if (tomcatInfoModel == null) {
+                SocketSessionUtil.send(session, "没有对应tomcat");
+                session.close();
+                return;
+            }
+            runMsg(session, tomcatInfoModel, json);
+        }
+    }
 }
