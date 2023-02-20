@@ -71,4 +71,14 @@ public class AgentConfigBean {
         }
         return agentConfigBean;
     }
+
+    /**
+     * 获取当前登录用户的临时文件存储路径，如果没有登录则抛出异常
+     *
+     * @return 文件夹
+     */
+    public String getTempPathName() {
+        File file = getTempPath();
+        return FileUtil.normalize(file.getPath());
+    }
 }
