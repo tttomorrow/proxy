@@ -31,4 +31,25 @@ public abstract class BaseAgentWebSocketHandle {
         List<String> strings = pathParameters.get(name);
         return CollUtil.join(strings, StrUtil.COMMA);
     }
+
+    /**
+     * 判断授权信息是否正确
+     *
+     * @param session session
+     * @return true 需要结束回话
+     */
+    public boolean checkAuthorize(Session session) {
+        String authorize = this.getParameters(session, ConfigBean.MPMS_AGENT_AUTHORIZE);
+        boolean ok = AgentAuthorize.getInstance().checkAuthorize(authorize);
+        if (!ok) {
+            try {
+                session.close(new CloseReason(CANNOT_ACCEPT, "授权信息错误"));
+            } catch (Exception e) {
+                DefaultSystemLog.getLog().error("socket 错误", e);
+            }
+            return true;
+        }
+        this.addUser(session, this.getParameters(session, "optUser"));
+        return false;
+    }
 }
