@@ -35,4 +35,32 @@ public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
         session.setMaxBinaryMessageBufferSize(1024 * 1024);
 
     }
+
+    @OnMessage
+    public void onMessage(String message, Session session) throws Exception {
+        WebSocketMessageModel model = WebSocketMessageModel.getInstance(message);
+        switch (model.getCommand()) {
+            case "getVersion":
+                model.setData(JSONObject.toJSONString(JpomManifest.getInstance()));
+                break;
+            case "upload":
+                AgentFileModel agentFileModel = ((JSONObject) model.getParams()).toJavaObject(AgentFileModel.class);
+                UploadFileModel uploadFileModel = new UploadFileModel();
+                uploadFileModel.setId(model.getNodeId());
+                uploadFileModel.setName(agentFileModel.getName());
+                uploadFileModel.setSize(agentFileModel.getSize());
+                uploadFileModel.setVersion(agentFileModel.getVersion());
+                uploadFileModel.setSavePath(AgentConfigBean.getInstance().getTempPath().getAbsolutePath());
+                uploadFileModel.remove();
+                UPLOAD_FILE_INFO.put(session.getId(), uploadFileModel);
+                break;
+            case "restart":
+                model.setData(restart(session));
+                break;
+            default:
+                break;
+        }
+        SocketSessionUtil.send(session, model.toString());
+        //session.sendMessage(new TextMessage(model.toString()));
+    }
 }
