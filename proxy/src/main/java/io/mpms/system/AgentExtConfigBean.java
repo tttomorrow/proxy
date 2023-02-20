@@ -116,4 +116,27 @@ public class AgentExtConfigBean {
         return agentUrl;
     }
 
+
+    /**
+     * 创建请求对象
+     *
+     * @param openApi url
+     * @return HttpRequest
+     * @see ServerOpenApi
+     */
+    public HttpRequest createServerRequest(String openApi) {
+        if (StrUtil.isEmpty(getServerUrl())) {
+            throw new LinuxRuntimeException("请先配置server端url");
+        }
+        if (StrUtil.isEmpty(getServerToken())) {
+            throw new LinuxRuntimeException("请先配置server端Token");
+        }
+        // 加密
+        String md5 = SecureUtil.md5(getServerToken());
+        md5 = SecureUtil.sha1(md5 + ServerOpenApi.HEAD);
+        HttpRequest httpRequest = HttpUtil.createPost(String.format("%s%s", serverUrl, openApi));
+        httpRequest.header(ServerOpenApi.HEAD, md5);
+        return httpRequest;
+    }
+
 }
