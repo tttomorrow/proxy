@@ -52,4 +52,19 @@ public class AgentFileTailWatcher<T> extends BaseFileTailWatcher<T> {
         agentFileTailWatcher.add(session, FileUtil.getName(file));
         agentFileTailWatcher.tailWatcherRun.start();
     }
+
+    /**
+     * 有客户端离线
+     *
+     * @param session 会话
+     */
+    public static void offline(Session session) {
+        Collection<AgentFileTailWatcher<Session>> collection = CONCURRENT_HASH_MAP.values();
+        for (AgentFileTailWatcher<Session> agentFileTailWatcher : collection) {
+            agentFileTailWatcher.socketSessions.removeIf(session::equals);
+            if (agentFileTailWatcher.socketSessions.isEmpty()) {
+                agentFileTailWatcher.close();
+            }
+        }
+    }
 }
