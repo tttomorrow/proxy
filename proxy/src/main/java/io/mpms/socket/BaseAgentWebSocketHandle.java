@@ -52,4 +52,15 @@ public abstract class BaseAgentWebSocketHandle {
         this.addUser(session, this.getParameters(session, "optUser"));
         return false;
     }
+
+    /**
+     * 添加用户监听的
+     *
+     * @param session session
+     * @param name    用户名
+     */
+    private void addUser(Session session, String name) {
+        String optUser = URLUtil.decode(name);
+        USER.put(session.getId(), optUser);
+    }
 }
