@@ -106,4 +106,22 @@ public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
             SocketSessionUtil.send(session, ExceptionUtil.stacktraceToString(e));
         }
     }
+
+    private void runMsg(Session session, TomcatInfoModel tomcatInfoModel, JSONObject reqJson) throws Exception {
+        try {
+            String fileName = reqJson.getString("fileName");
+            // 进入管理页面后需要实时加载日志
+            File file = FileUtil.file(tomcatInfoModel.getPath(), "logs", fileName);
+            try {
+                AgentFileTailWatcher.addWatcher(file, session);
+            } catch (IOException io) {
+                DefaultSystemLog.getLog().error("监听日志变化", io);
+                SocketSessionUtil.send(session, io.getMessage());
+            }
+        } catch (Exception e) {
+            DefaultSystemLog.getLog().error("执行命令失败", e);
+            SocketSessionUtil.send(session, "执行命令失败,详情如下：");
+            SocketSessionUtil.send(session, ExceptionUtil.stacktraceToString(e));
+        }
+    }
 }
