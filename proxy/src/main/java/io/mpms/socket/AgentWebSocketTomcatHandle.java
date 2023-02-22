@@ -81,4 +81,29 @@ public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
             runMsg(session, tomcatInfoModel, json);
         }
     }
+
+    private void runMsg(Session session, JSONObject reqJson) throws Exception {
+        try {
+            String fileName = reqJson.getString("fileName");
+            WebAopLog webAopLog = SpringUtil.getBean(WebAopLog.class);
+            // 进入管理页面后需要实时加载日志
+            File file = FileUtil.file(webAopLog.getPropertyValue(), fileName);
+            File file1 = CACHE_FILE.get(session.getId());
+            if (file1 != null && !file1.equals(file)) {
+                // 离线上一个日志
+                AgentFileTailWatcher.offlineFile(file, session);
+            }
+            try {
+                AgentFileTailWatcher.addWatcher(file, session);
+                CACHE_FILE.put(session.getId(), file);
+            } catch (IOException io) {
+                DefaultSystemLog.getLog().error("监听日志变化", io);
+                SocketSessionUtil.send(session, io.getMessage());
+            }
+        } catch (Exception e) {
+            DefaultSystemLog.getLog().error("执行命令失败", e);
+            SocketSessionUtil.send(session, "执行命令失败,详情如下：");
+            SocketSessionUtil.send(session, ExceptionUtil.stacktraceToString(e));
+        }
+    }
 }
