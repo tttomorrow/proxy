@@ -97,4 +97,13 @@ public class AgentConfigBean {
         FileUtil.mkdir(file);
         return file;
     }
+
+    /**
+     * 获取脚本模板路径
+     *
+     * @return file
+     */
+    public File getScriptPath() {
+        return FileUtil.file(ConfigBean.getInstance().getDataPath(), SCRIPT_DIRECTORY);
+    }
 }
