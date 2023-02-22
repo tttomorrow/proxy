@@ -63,4 +63,12 @@ public abstract class BaseAgentWebSocketHandle {
         String optUser = URLUtil.decode(name);
         USER.put(session.getId(), optUser);
     }
+
+    public void onError(Session session, Throwable thr) {
+        try {
+            SocketSessionUtil.send(session, "服务端发生异常" + ExceptionUtil.stacktraceToString(thr));
+        } catch (IOException ignored) {
+        }
+        DefaultSystemLog.getLog().error(session.getId() + "socket 异常", thr);
+    }
 }
