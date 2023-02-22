@@ -19,6 +19,7 @@ import io.jpom.system.AgentExtConfigBean;
 import io.jpom.system.ConfigBean;
 import io.jpom.util.JsonFileUtil;
 import io.mpms.system.AgentAuthorize;
+import io.mpms.system.AgentExtConfigBean;
 
 import java.io.File;
 import java.io.FileNotFoundException;
