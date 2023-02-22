@@ -67,4 +67,21 @@ public class AgentFileTailWatcher<T> extends BaseFileTailWatcher<T> {
             }
         }
     }
+
+    /**
+     * 关闭文件读取流
+     *
+     * @param fileName 文件名
+     */
+    public static void offlineFile(File fileName) {
+        AgentFileTailWatcher<Session> agentFileTailWatcher = CONCURRENT_HASH_MAP.get(fileName);
+        if (null == agentFileTailWatcher) {
+            return;
+        }
+        Set<Session> socketSessions = agentFileTailWatcher.socketSessions;
+        for (Session socketSession : socketSessions) {
+            offline(socketSession);
+        }
+        agentFileTailWatcher.close();
+    }
 }
