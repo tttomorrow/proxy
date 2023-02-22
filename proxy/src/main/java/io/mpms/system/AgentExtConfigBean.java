@@ -139,4 +139,16 @@ public class AgentExtConfigBean {
         return httpRequest;
     }
 
+    /**
+     * 配置错误或者没有，默认是7天
+     *
+     * @return int
+     */
+    public int getLogSaveDays() {
+        if (logSaveDays <= 0) {
+            return 7;
+        }
+        return logSaveDays;
+    }
+
 }
