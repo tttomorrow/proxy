@@ -63,4 +63,14 @@ public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
         SocketSessionUtil.send(session, model.toString());
         //session.sendMessage(new TextMessage(model.toString()));
     }
+
+    @OnMessage
+    public void onMessage(byte[] message, Session session) throws Exception {
+        UploadFileModel uploadFileModel = UPLOAD_FILE_INFO.get(session.getId());
+        uploadFileModel.save(message);
+        // 更新进度
+        WebSocketMessageModel model = new WebSocketMessageModel("updateNode", uploadFileModel.getId());
+        model.setData(uploadFileModel);
+        SocketSessionUtil.send(session, model.toString());
+    }
 }
