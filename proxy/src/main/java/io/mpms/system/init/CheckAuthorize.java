@@ -9,6 +9,7 @@ import io.jpom.system.AgentAuthorize;
 import io.jpom.system.AgentConfigBean;
 import io.jpom.system.ConfigBean;
 import io.jpom.system.ExtConfigBean;
+import io.mpms.system.AgentAuthorize;
 
 import java.io.File;
 
