@@ -73,4 +73,23 @@ public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
         model.setData(uploadFileModel);
         SocketSessionUtil.send(session, model.toString());
     }
+
+    /**
+     * 重启
+     *
+     * @param session 回话
+     * @return 结果
+     */
+    public String restart(Session session) {
+        String result = "重启中";
+        try {
+            UploadFileModel uploadFile = UPLOAD_FILE_INFO.get(session.getId());
+            JpomManifest.releaseJar(uploadFile.getFilePath(), uploadFile.getVersion(), true);
+            JpomApplication.restart();
+        } catch (RuntimeException e) {
+            result = e.getMessage();
+            DefaultSystemLog.getLog().error("重启失败", e);
+        }
+        return result;
+    }
 }
