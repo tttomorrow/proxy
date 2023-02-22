@@ -28,5 +28,12 @@ public class AgentAopLog {
         String ip = BaseAgentController.getAgentIp();
         NodeIp = ip;
     }
+
+    @AfterReturning(returning = "ret", pointcut = "AgentLog()")
+    public void doAfterReturning(Object ret) {
+        if (ret == null) {
+            return;
+        }
+    }
 }
 
