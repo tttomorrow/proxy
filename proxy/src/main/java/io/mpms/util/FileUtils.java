@@ -70,4 +70,16 @@ public class FileUtils {
         });
         return arrayFile;
     }
+
+    /**
+     * 判断路径是否满足jdk 条件
+     *
+     * @param path 路径
+     * @return 判断存在java文件
+     */
+    public static boolean isJdkPath(String path) {
+        String fileName = getJdkJavaPath(path, false);
+        File newPath = new File(fileName);
+        return newPath.exists() && newPath.isFile();
+    }
 }
