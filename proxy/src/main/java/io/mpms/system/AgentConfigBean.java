@@ -81,4 +81,20 @@ public class AgentConfigBean {
         File file = getTempPath();
         return FileUtil.normalize(file.getPath());
     }
+
+    /**
+     * 获取当前登录用户的临时文件存储路径，如果没有登录则抛出异常
+     *
+     * @return file
+     */
+    public File getTempPath() {
+        File file = ConfigBean.getInstance().getTempPath();
+        String userName = BaseAgentController.getNowUserName();
+        if (StrUtil.isEmpty(userName)) {
+            throw new LinuxRuntimeException("没有登录");
+        }
+        file = new File(file, userName);
+        FileUtil.mkdir(file);
+        return file;
+    }
 }
