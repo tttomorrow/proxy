@@ -100,4 +100,27 @@ public class FileUtils {
         File newPath = FileUtil.file(path, "bin", fileName);
         return FileUtil.getAbsolutePath(newPath);
     }
+
+    /**
+     * 获取jdk 版本
+     *
+     * @param path jdk 路径
+     * @return 获取成功返回版本号
+     */
+    public static String getJdkVersion(String path) {
+        String newPath = getJdkJavaPath(path, false);
+        if (path.contains(StrUtil.SPACE)) {
+            newPath = String.format("\"%s\"", newPath);
+        }
+        String command = CommandUtil.execSystemCommand(newPath + "  -version");
+        String[] split = StrUtil.splitToArray(command, StrUtil.LF);
+        if (split == null || split.length <= 0) {
+            return null;
+        }
+        String[] strings = StrUtil.splitToArray(split[0], "\"");
+        if (strings == null || strings.length <= 1) {
+            return null;
+        }
+        return strings[1];
+    }
 }
