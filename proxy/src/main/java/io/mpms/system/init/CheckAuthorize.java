@@ -4,7 +4,6 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.jiangzeyin.common.PreLoadClass;
 import cn.jiangzeyin.common.PreLoadMethod;
-import io.jpom.common.JpomManifest;
 import io.jpom.system.AgentAuthorize;
 import io.jpom.system.AgentConfigBean;
 import io.jpom.system.ConfigBean;

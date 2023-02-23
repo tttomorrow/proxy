@@ -160,4 +160,17 @@ public class AgentExtConfigBean {
         String cron = StrUtil.emptyToDefault(autoBackConsoleCron, "none");
         return !"none".equalsIgnoreCase(cron.trim());
     }
+
+    /**
+     * 获取当前登录节点的包构架配置，如果没有则返回默认值
+     *
+     * @return Map<String, String>
+     */
+    public Map<String, String> getPackageArchitecture() {
+        Map<String, String> matchArch = new HashMap<>();
+        matchArch.put("amd64", amd64Arch);
+        matchArch.put("arm64", arm64Arch);
+        matchArch.put("i386", i386Arch);
+        return matchArch;
+    }
 }
