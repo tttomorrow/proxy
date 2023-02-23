@@ -12,12 +12,6 @@ import cn.jiangzeyin.common.PreLoadClass;
 import cn.jiangzeyin.common.PreLoadMethod;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import io.jpom.common.ServerOpenApi;
-import io.jpom.system.AgentAuthorize;
-import io.jpom.system.AgentConfigBean;
-import io.jpom.system.AgentExtConfigBean;
-import io.jpom.system.ConfigBean;
-import io.jpom.util.JsonFileUtil;
 import io.mpms.system.AgentAuthorize;
 import io.mpms.system.AgentExtConfigBean;
 
