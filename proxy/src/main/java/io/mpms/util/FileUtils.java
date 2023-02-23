@@ -82,4 +82,22 @@ public class FileUtils {
         File newPath = new File(fileName);
         return newPath.exists() && newPath.isFile();
     }
+
+    /**
+     * 获取java 文件路径
+     *
+     * @param path path
+     * @param w    是否使用javaw
+     * @return 完整路径
+     */
+    public static String getJdkJavaPath(String path, boolean w) {
+        String fileName;
+        if (SystemUtil.getOsInfo().isWindows()) {
+            fileName = w ? "javaw.exe" : "java.exe";
+        } else {
+            fileName = w ? "javaw" : "java";
+        }
+        File newPath = FileUtil.file(path, "bin", fileName);
+        return FileUtil.getAbsolutePath(newPath);
+    }
 }
