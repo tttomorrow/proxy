@@ -124,4 +124,10 @@ public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
             SocketSessionUtil.send(session, ExceptionUtil.stacktraceToString(e));
         }
     }
+
+    @Override
+    @OnClose
+    public void onClose(Session session) {
+        super.onClose(session);
+    }
 }
