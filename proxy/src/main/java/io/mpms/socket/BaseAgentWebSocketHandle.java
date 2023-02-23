@@ -71,4 +71,9 @@ public abstract class BaseAgentWebSocketHandle {
         }
         DefaultSystemLog.getLog().error(session.getId() + "socket 异常", thr);
     }
+
+    protected String getOptUserName(Session session) {
+        String name = USER.get(session.getId());
+        return StrUtil.emptyToDefault(name, StrUtil.DASHED);
+    }
 }
