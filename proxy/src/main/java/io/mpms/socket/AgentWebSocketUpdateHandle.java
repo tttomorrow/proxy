@@ -92,4 +92,11 @@ public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
         }
         return result;
     }
+
+    @Override
+    @OnClose
+    public void onClose(Session session) {
+        super.onClose(session);
+        UPLOAD_FILE_INFO.remove(session.getId());
+    }
 }
