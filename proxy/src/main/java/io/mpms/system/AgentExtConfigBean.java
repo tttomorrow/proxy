@@ -173,4 +173,16 @@ public class AgentExtConfigBean {
         matchArch.put("i386", i386Arch);
         return matchArch;
     }
+
+    /**
+     * 单例
+     *
+     * @return this
+     */
+    public static AgentExtConfigBean getInstance() {
+        if (agentExtConfigBean == null) {
+            agentExtConfigBean = SpringUtil.getBean(AgentExtConfigBean.class);
+        }
+        return agentExtConfigBean;
+    }
 }
