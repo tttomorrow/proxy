@@ -107,4 +107,14 @@ public class AgentFileTailWatcher<T> extends BaseFileTailWatcher<T> {
         }
 
     }
+
+    /**
+     * 关闭
+     */
+    @Override
+    protected void close() {
+        super.close();
+        // 清理线程记录
+        CONCURRENT_HASH_MAP.remove(this.logFile);
+    }
 }
