@@ -13,6 +13,9 @@ import java.util.List;
  */
 public interface MiniSysLogService {
 
-
+    /**
+     * 通过ID查询单条数据
+     */
+    MiniSysLog queryById(Integer id);
 
 }
