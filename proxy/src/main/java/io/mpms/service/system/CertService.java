@@ -15,5 +15,7 @@ import java.io.File;
 @Service
 public class CertService extends BaseOperService<CertModel> {
 
-
+    public CertService() {
+        super(AgentConfigBean.CERT);
+    }
 }
