@@ -6,7 +6,6 @@ import cn.jiangzeyin.common.DefaultSystemLog;
 import cn.jiangzeyin.common.JsonMessage;
 import cn.jiangzeyin.common.spring.SpringUtil;
 import com.alibaba.fastjson.JSONObject;
-import io.jpom.JpomApplication;
 import io.jpom.model.data.TomcatInfoModel;
 import io.jpom.service.manage.TomcatEditService;
 import io.jpom.system.WebAopLog;
