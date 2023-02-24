@@ -17,5 +17,21 @@ import java.util.List;
 @Service
 public class WhitelistDirectoryService extends BaseDataService {
 
-
+    /**
+     * 获取白名单信息配置、如何没有配置或者配置错误将返回新对象
+     *
+     * @return AgentWhitelist
+     */
+    public AgentWhitelist getWhitelist() {
+        try {
+            JSONObject jsonObject = getJSONObject(AgentConfigBean.WHITELIST_DIRECTORY);
+            if (jsonObject == null) {
+                return new AgentWhitelist();
+            }
+            return jsonObject.toJavaObject(AgentWhitelist.class);
+        } catch (Exception e) {
+            DefaultSystemLog.getLog().error(e.getMessage(), e);
+        }
+        return new AgentWhitelist();
+    }
 }
