@@ -14,5 +14,7 @@ import java.util.List;
 @Service
 public class ScriptServer extends BaseOperService<ScriptModel> {
 
-
+    public ScriptServer() {
+        super(AgentConfigBean.SCRIPT);
+    }
 }
