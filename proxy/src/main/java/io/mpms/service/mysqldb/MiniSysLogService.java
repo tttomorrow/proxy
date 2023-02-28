@@ -18,4 +18,9 @@ public interface MiniSysLogService {
      */
     MiniSysLog queryById(Integer id);
 
+    /**
+     * 查询多条数据
+     */
+    List<MiniSysLog> queryAllByLimit(int offset, int limit);
+
 }
