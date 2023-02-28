@@ -10,6 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskParser {
-
+    private static volatile TaskParser taskParserInstance;
 
 }
