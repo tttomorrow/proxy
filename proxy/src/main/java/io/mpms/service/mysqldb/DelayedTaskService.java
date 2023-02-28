@@ -14,6 +14,12 @@ import java.util.List;
  */
 public interface DelayedTaskService {
 
-
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param id 主键
+     * @return 实例对象
+     */
+    DelayedTask queryById(Integer id);
 
 }
