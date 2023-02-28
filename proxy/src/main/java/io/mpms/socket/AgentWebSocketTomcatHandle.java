@@ -129,4 +129,10 @@ public class AgentWebSocketTomcatHandle extends BaseAgentWebSocketHandle {
     public void onClose(Session session) {
         super.onClose(session);
     }
+
+    @OnError
+    @Override
+    public void onError(Session session, Throwable thr) {
+        super.onError(session, thr);
+    }
 }
