@@ -21,4 +21,6 @@ import java.nio.file.WatchEvent;
 public class SourceManagerService implements Runnable {
 
 
+    @Resource
+    MiniSysLogService miniSysLogService;
 }
