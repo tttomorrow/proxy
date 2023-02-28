@@ -17,4 +17,15 @@ public class ScriptServer extends BaseOperService<ScriptModel> {
     public ScriptServer() {
         super(AgentConfigBean.SCRIPT);
     }
+
+    @Override
+    public List<ScriptModel> list() {
+        List<ScriptModel> scriptModels = super.list();
+        if (scriptModels == null) {
+            return null;
+        }
+        // 读取文件内容
+        scriptModels.forEach(ScriptModel::readFileTime);
+        return scriptModels;
+    }
 }
