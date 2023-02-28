@@ -98,4 +98,10 @@ public class AgentWebSocketUpdateHandle extends BaseAgentWebSocketHandle {
         super.onClose(session);
         UPLOAD_FILE_INFO.remove(session.getId());
     }
+
+    @OnError
+    @Override
+    public void onError(Session session, Throwable thr) {
+        super.onError(session, thr);
+    }
 }
