@@ -17,4 +17,6 @@ import java.util.List;
 @Service("sourceconfigService")
 public class sourceConfigServiceImpl implements SourceConfigService {
 
+    @Resource
+    private SourceConfigDao sourceconfigDao;
 }
