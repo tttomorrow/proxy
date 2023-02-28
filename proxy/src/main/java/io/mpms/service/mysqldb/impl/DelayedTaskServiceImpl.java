@@ -20,4 +20,6 @@ import java.util.List;
 @Service("delayedTaskService")
 public class DelayedTaskServiceImpl implements DelayedTaskService {
 
+    @Resource
+    private DelayedTaskDao delayedTaskDao;
 }
