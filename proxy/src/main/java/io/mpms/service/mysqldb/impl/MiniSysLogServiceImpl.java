@@ -21,4 +21,6 @@ import java.util.List;
 @Service("miniSysLogService")
 public class MiniSysLogServiceImpl implements MiniSysLogService {
 
+    @Resource
+    private MiniSysLogDao minisyslogDao;
 }
