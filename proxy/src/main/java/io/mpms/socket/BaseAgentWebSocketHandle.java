@@ -75,4 +75,14 @@ public abstract class BaseAgentWebSocketHandle {
         String name = USER.get(session.getId());
         return StrUtil.emptyToDefault(name, StrUtil.DASHED);
     }
+
+    public void onClose(Session session) {
+        // 清理日志监听
+        try {
+            AgentFileTailWatcher.offline(session);
+        } catch (Exception e) {
+            DefaultSystemLog.getLog().error("关闭异常", e);
+        }
+        USER.remove(session.getId());
+    }
 }
