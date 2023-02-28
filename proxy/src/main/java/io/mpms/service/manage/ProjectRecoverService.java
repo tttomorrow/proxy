@@ -13,5 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProjectRecoverService extends BaseOperService<ProjectRecoverModel> {
 
-
+    public ProjectRecoverService() {
+        super(AgentConfigBean.PROJECT_RECOVER);
+    }
 }
