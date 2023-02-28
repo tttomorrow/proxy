@@ -6,7 +6,6 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.jiangzeyin.common.spring.SpringUtil;
-import io.jpom.common.ServerOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
