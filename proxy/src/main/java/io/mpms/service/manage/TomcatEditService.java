@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TomcatEditService extends BaseOperService<TomcatInfoModel> {
 
-
+    public TomcatEditService() {
+        super(AgentConfigBean.TOMCAT);
+    }
 
 }
