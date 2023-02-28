@@ -21,5 +21,6 @@ import java.util.List;
  */
 @Service
 public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
-
+    @Resource
+    private ProjectRecoverService projectRecoverService;
 }
