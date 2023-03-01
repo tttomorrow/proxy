@@ -28,4 +28,13 @@ public class ScriptServer extends BaseOperService<ScriptModel> {
         scriptModels.forEach(ScriptModel::readFileTime);
         return scriptModels;
     }
+
+    @Override
+    public ScriptModel getItem(String id) {
+        ScriptModel scriptModel = super.getItem(id);
+        if (scriptModel != null) {
+            scriptModel.readFileContext();
+        }
+        return scriptModel;
+    }
 }
