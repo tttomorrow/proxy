@@ -2,7 +2,6 @@ package io.mpms.socket;
 
 import cn.hutool.core.io.FileUtil;
 import cn.jiangzeyin.common.DefaultSystemLog;
-import io.jpom.util.BaseFileTailWatcher;
 
 import javax.websocket.Session;
 import java.io.File;
