@@ -13,5 +13,6 @@ import javax.annotation.Resource;
  */
 @Service
 public class ConsoleService {
-
+    @Resource
+    private ProjectInfoService projectInfoService;
 }
