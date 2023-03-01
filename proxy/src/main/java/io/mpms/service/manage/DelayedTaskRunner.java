@@ -13,5 +13,6 @@ import javax.annotation.Resource;
 @Service
 public class DelayedTaskRunner implements Runnable {
 
-
+    @Resource
+    private DelayedTaskService delayedtaskService;
 }
