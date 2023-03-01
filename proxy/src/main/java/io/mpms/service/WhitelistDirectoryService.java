@@ -34,4 +34,20 @@ public class WhitelistDirectoryService extends BaseDataService {
         }
         return new AgentWhitelist();
     }
+
+
+    /**
+     * 单项添加白名单
+     *
+     * @param item 白名单
+     */
+    public void addProjectWhiteList(String item) {
+        AgentWhitelist agentWhitelist = getWhitelist();
+        List<String> project = agentWhitelist.getProject();
+        if (project == null) {
+            project = new ArrayList<>();
+        }
+        project.add(item);
+        saveWhitelistDirectory(agentWhitelist);
+    }
 }
