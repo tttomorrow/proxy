@@ -5,7 +5,6 @@ import cn.hutool.core.exceptions.ExceptionUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.URLUtil;
 import cn.jiangzeyin.common.DefaultSystemLog;
-import io.jpom.system.ConfigBean;
 
 import javax.websocket.CloseReason;
 import javax.websocket.Session;
