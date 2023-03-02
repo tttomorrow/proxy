@@ -30,4 +30,9 @@ public class sourceConfigServiceImpl implements SourceConfigService {
     public SourceConfig queryById(Integer id) {
         return this.sourceconfigDao.queryById(id);
     }
+
+    @Override
+    public List<SourceConfig> selectAll(){
+        return this.sourceconfigDao.selectAll();
+    }
 }
