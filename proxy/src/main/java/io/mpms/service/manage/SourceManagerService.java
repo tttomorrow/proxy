@@ -23,4 +23,7 @@ public class SourceManagerService implements Runnable {
 
     @Resource
     MiniSysLogService miniSysLogService;
+
+    @Resource
+    private SourceConfigService sourceconfigService;
 }
