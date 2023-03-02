@@ -28,4 +28,11 @@ public interface MiniSysLogService {
      */
     List<MiniSysLog> queryAll();
 
+    /**
+     * 新增数据
+     *
+     * @return 影响行数
+     */
+    Integer insert(int level, String content, String extra);
+
 }
