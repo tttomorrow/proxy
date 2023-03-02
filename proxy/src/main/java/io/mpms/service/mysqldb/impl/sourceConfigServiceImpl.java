@@ -19,4 +19,15 @@ public class sourceConfigServiceImpl implements SourceConfigService {
 
     @Resource
     private SourceConfigDao sourceconfigDao;
+
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param id 主键
+     * @return 实例对象
+     */
+    @Override
+    public SourceConfig queryById(Integer id) {
+        return this.sourceconfigDao.queryById(id);
+    }
 }
