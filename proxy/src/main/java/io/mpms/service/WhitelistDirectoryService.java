@@ -50,4 +50,10 @@ public class WhitelistDirectoryService extends BaseDataService {
         project.add(item);
         saveWhitelistDirectory(agentWhitelist);
     }
+
+    public boolean isInstalled() {
+        AgentWhitelist agentWhitelist = getWhitelist();
+        List<String> project = agentWhitelist.getProject();
+        return project != null && !project.isEmpty();
+    }
 }
