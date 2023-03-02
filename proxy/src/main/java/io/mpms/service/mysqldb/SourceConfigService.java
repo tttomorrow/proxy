@@ -28,4 +28,12 @@ public interface SourceConfigService {
      */
     List<SourceConfig> selectAll();
 
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param sourceconfig 源信息对象实例
+     * @return 找到为true,反之为false
+     */
+    boolean isFoundByEntity(SourceConfig sourceconfig);
+
 }
