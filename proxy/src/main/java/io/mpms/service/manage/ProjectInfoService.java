@@ -23,4 +23,8 @@ import java.util.List;
 public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
     @Resource
     private ProjectRecoverService projectRecoverService;
+
+    public ProjectInfoService() {
+        super(AgentConfigBean.PROJECT);
+    }
 }
