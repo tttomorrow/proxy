@@ -6,7 +6,6 @@ import io.jpom.common.JpomManifest;
 import io.jpom.model.AgentFileModel;
 import io.jpom.model.WebSocketMessageModel;
 import io.jpom.system.AgentConfigBean;
-import io.jpom.util.SocketSessionUtil;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
