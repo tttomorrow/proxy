@@ -12,4 +12,5 @@ import java.util.List;
 public class TaskParser {
     private static volatile TaskParser taskParserInstance;
 
+    private static final TaskQueueModel taskQueue = TaskQueueModel.getInstance();
 }
