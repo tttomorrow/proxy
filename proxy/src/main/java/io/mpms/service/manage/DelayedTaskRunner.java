@@ -15,4 +15,7 @@ public class DelayedTaskRunner implements Runnable {
 
     @Resource
     private DelayedTaskService delayedtaskService;
+
+    @Resource
+    private MiniSysLogService miniSysLogService;
 }
