@@ -24,4 +24,6 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     private DelayedTaskDao delayedTaskDao;
 
     private final TaskParser taskParser = new TaskParser();
+
+    private String nodeId;
 }
