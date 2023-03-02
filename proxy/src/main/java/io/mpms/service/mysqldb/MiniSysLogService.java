@@ -23,4 +23,9 @@ public interface MiniSysLogService {
      */
     List<MiniSysLog> queryAllByLimit(int offset, int limit);
 
+    /**
+     * 查询所有日志数据
+     */
+    List<MiniSysLog> queryAll();
+
 }
