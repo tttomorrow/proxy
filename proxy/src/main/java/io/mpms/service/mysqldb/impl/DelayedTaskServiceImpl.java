@@ -22,4 +22,6 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
 
     @Resource
     private DelayedTaskDao delayedTaskDao;
+
+    private final TaskParser taskParser = new TaskParser();
 }
