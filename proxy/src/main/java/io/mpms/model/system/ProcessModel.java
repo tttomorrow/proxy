@@ -14,5 +14,8 @@ import java.io.IOException;
  
  */
 public class ProcessModel extends BaseJsonModel {
-
+    /**
+     * 进程id
+     */
+    private int pid;
 }
