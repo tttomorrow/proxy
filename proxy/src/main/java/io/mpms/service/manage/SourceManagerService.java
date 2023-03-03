@@ -28,4 +28,5 @@ public class SourceManagerService implements Runnable {
     private SourceConfigService sourceconfigService;
     public static final String SourceFileName = "/etc/apt/sources.list";
     private final String osInfoFile = "/etc/issue";
+    private long Cycle = 1;
 }
