@@ -9,5 +9,8 @@ import io.jpom.model.BaseModel;
  */
 public class JdkInfoModel extends BaseModel {
 
-
+    /**
+     * jdk 路径
+     */
+    private String path;
 }
