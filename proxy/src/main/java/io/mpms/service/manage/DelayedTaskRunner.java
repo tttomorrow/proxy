@@ -84,4 +84,8 @@ public class DelayedTaskRunner implements Runnable {
             DefaultSystemLog.getLog().error("********************************" + e.getMessage(), e + "*********************************************");
         }
     }
+
+    public String getNodeId() {
+        return nodeId;
+    }
 }
