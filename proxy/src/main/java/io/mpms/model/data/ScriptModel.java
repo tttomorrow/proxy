@@ -17,5 +17,8 @@ import java.io.File;
  */
 public class ScriptModel extends BaseModel {
 
-
+    /**
+     * 最后执行人员
+     */
+    private String lastRunUser;
 }
