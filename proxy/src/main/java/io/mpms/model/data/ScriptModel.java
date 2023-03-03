@@ -21,4 +21,8 @@ public class ScriptModel extends BaseModel {
      * 最后执行人员
      */
     private String lastRunUser;
+    /**
+     * 最后修改时间
+     */
+    private String modifyTime;
 }
