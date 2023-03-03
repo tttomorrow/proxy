@@ -18,4 +18,8 @@ public class ProcessModel extends BaseJsonModel {
      * 进程id
      */
     private int pid;
+    /**
+     * 进程名
+     */
+    private String command;
 }
