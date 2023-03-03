@@ -28,4 +28,8 @@ public class SourceManagerService implements Runnable {
     private final String osInfoFile = "/etc/issue";
     private long Cycle = 1;
     private String netCheckContent;
+
+    public SourceManagerService() {
+
+    }
 }
