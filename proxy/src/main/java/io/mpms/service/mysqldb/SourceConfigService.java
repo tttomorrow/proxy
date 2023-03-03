@@ -53,4 +53,12 @@ public interface SourceConfigService {
      */
     SourceConfig insert(SourceConfig sourceconfig);
 
+    /**
+     * 修改数据
+     *
+     * @param sourceconfig 实例对象
+     * @return 实例对象
+     */
+    SourceConfig update(SourceConfig sourceconfig);
+
 }
