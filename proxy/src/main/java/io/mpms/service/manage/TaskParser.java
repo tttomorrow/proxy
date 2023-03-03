@@ -34,4 +34,15 @@ public class TaskParser {
 
         return taskJsonObj;
     }
+
+    public List<DelayedTask> getTaskListFromStr(String taskListStr) {
+        JSONArray tasks = JSON.parseArray(taskListStr);
+        List<DelayedTask> delayedTaskList = new ArrayList<>();
+        for (Object item : tasks) {
+            DelayedTask task = jsonObjectToTaskmodel((JSONObject) item);
+            delayedTaskList.add(task);
+        }
+        delayedTaskList.sort(null);
+        return delayedTaskList;
+    }
 }
