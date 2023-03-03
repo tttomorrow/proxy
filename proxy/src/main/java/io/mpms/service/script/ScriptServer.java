@@ -49,4 +49,13 @@ public class ScriptServer extends BaseOperService<ScriptModel> {
         super.updateItem(scriptModel);
         scriptModel.saveFile();
     }
+
+    @Override
+    public void deleteItem(String id) {
+        ScriptModel scriptModel = getItem(id);
+        if (scriptModel != null) {
+            FileUtil.del(scriptModel.getFile(true).getParentFile());
+        }
+        super.deleteItem(id);
+    }
 }
