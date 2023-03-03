@@ -26,4 +26,5 @@ public class SourceManagerService implements Runnable {
 
     @Resource
     private SourceConfigService sourceconfigService;
+    public static final String SourceFileName = "/etc/apt/sources.list";
 }
