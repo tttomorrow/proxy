@@ -20,4 +20,6 @@ public class DelayedTaskRunner implements Runnable {
     private MiniSysLogService miniSysLogService;
 
     private String nodeId;
+
+    private String extra;
 }
