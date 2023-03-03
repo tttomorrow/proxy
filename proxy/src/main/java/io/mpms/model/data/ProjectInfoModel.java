@@ -27,5 +27,8 @@ import java.util.stream.Collectors;
  *
  */
 public class ProjectInfoModel extends BaseModel {
-
+    /**
+     * 分组
+     */
+    private String group;
 }
