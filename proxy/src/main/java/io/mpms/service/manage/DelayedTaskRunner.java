@@ -22,4 +22,30 @@ public class DelayedTaskRunner implements Runnable {
     private String nodeId;
 
     private String extra;
+
+    private SystemCommanderResult performTask(DelayedTask task) {
+        String action = task.getTaskAction();
+        switch (action) {
+            case "install": {
+                extra = "安装软件包" + task.getTaskTarget();
+                return AbstractSystemCommander.getInstance().installPackage(task.getTaskTarget().replace(" ", ""));
+            }
+
+            case "uninstall": {
+                extra = "卸载软件包" + task.getTaskTarget();
+                return AbstractSystemCommander.getInstance().uninstallPackage(task.getTaskTarget().replace(" ", ""));
+            }
+
+            case "update": {
+                extra = "更新软件包" + task.getTaskTarget();
+                return AbstractSystemCommander.getInstance().updatePackage(task.getTaskTarget().replace(" ", ""));
+            }
+
+            default:{
+                // 删除本次循环的任务,可能为脏数据
+                this.delayedtaskService.deleteById(task.getId());
+            }
+        }
+        return null;
+    }
 }
