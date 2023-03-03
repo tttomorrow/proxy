@@ -47,4 +47,17 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     public List<DelayedTask> queryAllByLimit(int offset, int limit) {
         return this.delayedTaskDao.queryAllByLimit(this.nodeId, offset, limit);
     }
+
+    /**
+     * 新增数据
+     *
+     * @param delayedTask 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public DelayedTask insert(DelayedTask delayedTask) {
+        this.delayedTaskDao.insert(delayedTask);
+        this.delayedTaskDao.setLastInsertTaskId();
+        return delayedTask;
+    }
 }
