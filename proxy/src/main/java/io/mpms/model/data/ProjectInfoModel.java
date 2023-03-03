@@ -31,4 +31,5 @@ public class ProjectInfoModel extends BaseModel {
      * 分组
      */
     private String group;
+    private String mainClass;
 }
