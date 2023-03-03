@@ -12,4 +12,6 @@ import java.io.Serializable;
  */
 public class MiniSysLog implements Serializable {
     private static final long serialVersionUID = -70056513892554940L;
+
+    private Integer id;
 }
