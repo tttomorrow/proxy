@@ -4,7 +4,6 @@ import cn.hutool.core.io.watch.WatchMonitor;
 import cn.hutool.core.io.watch.Watcher;
 import cn.hutool.core.io.watch.watchers.DelayWatcher;
 import cn.hutool.system.SystemUtil;
-import io.jpom.model.data.SystemCommanderResult;
 import io.jpom.model.system.SourceConfig;
 import io.jpom.service.mysqldb.MiniSysLogService;
 import io.jpom.service.mysqldb.SourceConfigService;
