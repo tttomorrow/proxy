@@ -10,6 +10,7 @@ import cn.jiangzeyin.common.DefaultSystemLog;
 import cn.jiangzeyin.common.PreLoadClass;
 import cn.jiangzeyin.common.PreLoadMethod;
 import cn.jiangzeyin.common.spring.SpringUtil;
+import io.mpms.model.data.ProjectInfoModel;
 import io.mpms.service.manage.ProjectInfoService;
 import io.mpms.system.AgentExtConfigBean;
 
