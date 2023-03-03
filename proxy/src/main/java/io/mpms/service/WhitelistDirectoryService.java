@@ -61,4 +61,11 @@ public class WhitelistDirectoryService extends BaseDataService {
         AgentWhitelist agentWhitelist = getWhitelist();
         return agentWhitelist.getNginx();
     }
+
+    public boolean checkProjectDirectory(String path) {
+        AgentWhitelist agentWhitelist = getWhitelist();
+
+        List<String> list = agentWhitelist.getProject();
+        return AgentWhitelist.checkPath(list, path);
+    }
 }
