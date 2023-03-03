@@ -46,4 +46,42 @@ public class DelayedTaskRunner implements Runnable {
         }
         return null;
     }
+
+    @Override
+    public void run() {
+        try {
+            delayedtaskService.setNodeId(nodeId);
+            miniSysLogService.insert(0, "Start delayed task thread.", "启动后台任务调度线程!");
+            while (true) {
+                Thread.sleep(100);
+                DelayedTask task = this.delayedtaskService.getOneNotStartedTask();
+                if (task == null) {
+                    continue;
+                }
+                miniSysLogService.insert(0, "Start performing background tasks.", "当前线程状态为："+Thread.currentThread().getState()+"，开始执行后台任务!任务目的："+task.getTaskAction()+" "+task.getTaskTarget());
+                task.setTaskStatus(1);
+                task.setTaskId(task.getId());
+                this.delayedtaskService.update(task);
+                SystemCommanderResult commanderResult = performTask(task);
+                if (commanderResult != null) {
+                    if (commanderResult.getCommanderStaus().equals(0)) {
+                        task.setTaskStatus(2);
+                        miniSysLogService.insert(0, task.getTaskAction() + " " + task.getTaskTarget() + " success.",
+                                extra+"成功!");
+                    } else {
+                        task.setTaskStatus(3);
+                        miniSysLogService.insert(0, task.getTaskAction() + " " + task.getTaskTarget() + " failed.",
+                                extra+"失败!");
+                    }
+                    task.setTaskViewTimes(0);
+                    task.setTaskContent(commanderResult.getCommanderresult());
+                }
+                this.delayedtaskService.update(task);
+
+            }
+        } catch (Exception e) {
+            miniSysLogService.insert(0, "The background thread was aborted abnormally.", "当前线程状态为："+Thread.currentThread().getState()+"，后台任务调度线程异常中止!");
+            DefaultSystemLog.getLog().error("********************************" + e.getMessage(), e + "*********************************************");
+        }
+    }
 }
