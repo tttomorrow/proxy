@@ -10,5 +10,5 @@ import java.io.Serializable;
  */
 
 public class SourceConfig implements Serializable {
-
+    private static final long serialVersionUID = 515241386935083527L;
 }
