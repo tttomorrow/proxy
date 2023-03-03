@@ -13,4 +13,8 @@ public class ProjectRecoverModel extends BaseModel {
      * 删除人
      */
     private String delUser;
+    /**
+     * 删除时间
+     */
+    private String delTime;
 }
