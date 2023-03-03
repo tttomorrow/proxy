@@ -9,4 +9,9 @@ public class SourcePackageInfoVo implements Serializable{
      * 包名
      */
     private String Package;
+
+    /**
+     * 版本
+     */
+    private String Version;
 }
