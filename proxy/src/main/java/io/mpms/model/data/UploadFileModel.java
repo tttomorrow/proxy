@@ -12,4 +12,5 @@ import java.io.IOException;
  */
 public class UploadFileModel extends BaseModel {
     private long size = 0;
+    private long completeSize = 0;
 }
