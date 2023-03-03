@@ -46,4 +46,15 @@ public class MiniSysLogServiceImpl implements MiniSysLogService {
     public List<MiniSysLog> queryAllByLimit(int offset, int limit) {
         return this.minisyslogDao.queryAllByLimit(offset, limit);
     }
+
+    /**
+     * 查询所有日志数据
+     *
+     * @return 对象列表
+     */
+    @Override
+    public List<MiniSysLog> queryAll() {
+        List<MiniSysLog> logList = this.minisyslogDao.queryAll();
+        return logList;
+    }
 }
