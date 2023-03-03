@@ -46,4 +46,9 @@ public interface MiniSysLogService {
      */
     MiniSysLog update(int id, int type, String ip, int level, DateTime time, String content, String extra);
 
+    /**
+     * 通过主键删除数据
+     */
+    boolean deleteById(Integer id);
+
 }
