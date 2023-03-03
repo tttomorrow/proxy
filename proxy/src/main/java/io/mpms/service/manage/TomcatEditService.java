@@ -39,4 +39,15 @@ public class TomcatEditService extends BaseOperService<TomcatInfoModel> {
         return JSONObject.toJavaObject(tomcat, TomcatInfoModel.class);
     }
 
+    /**
+     * 添加Tomcat
+     *
+     * @param tomcatInfoModel tomcat信息
+     */
+    @Override
+    public void addItem(TomcatInfoModel tomcatInfoModel) {
+        tomcatInfoModel.setCreateTime(DateUtil.now());
+        super.addItem(tomcatInfoModel);
+    }
+
 }
