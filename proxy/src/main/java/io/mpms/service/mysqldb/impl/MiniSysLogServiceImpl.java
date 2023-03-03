@@ -113,4 +113,20 @@ public class MiniSysLogServiceImpl implements MiniSysLogService {
             return this.minisyslogDao.insertMultiple(insertList);
         }
     }
+
+    /**
+     * 修改数据
+     */
+    @Override
+    public MiniSysLog update(int id, int type, String ip, int level, DateTime time, String content, String extra) {
+        MiniSysLog miniSysLog = new MiniSysLog();
+        miniSysLog.setId(0);
+        miniSysLog.setType(0);
+        miniSysLog.setLevel(level);
+        miniSysLog.setTime(DateTime.now().toString());
+        miniSysLog.setContent(content);
+        miniSysLog.setExtra(extra);
+        this.minisyslogDao.update(miniSysLog);
+        return this.queryById(miniSysLog.getId());
+    }
 }
