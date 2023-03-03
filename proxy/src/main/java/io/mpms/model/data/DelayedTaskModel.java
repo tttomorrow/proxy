@@ -12,4 +12,9 @@ public class DelayedTaskModel implements Comparable<DelayedTaskModel> {
      * id，由数据库设置
      */
     private Integer id;
+
+    /*
+     * 任务id，值等同id
+     */
+    private Integer taskId;
 }
