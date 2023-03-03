@@ -40,4 +40,16 @@ public class sourceConfigServiceImpl implements SourceConfigService {
     public boolean isFoundByEntity(SourceConfig sourceconfig) {
         return !sourceconfigDao.queryAll(sourceconfig).isEmpty();
     }
+
+    /**
+     * 查询多条数据
+     *
+     * @param offset 查询起始位置
+     * @param limit 查询条数
+     * @return 对象列表
+     */
+    @Override
+    public List<SourceConfig> queryAllByLimit(int offset, int limit) {
+        return this.sourceconfigDao.queryAllByLimit(offset, limit);
+    }
 }
