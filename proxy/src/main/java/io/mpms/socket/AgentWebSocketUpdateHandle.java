@@ -2,7 +2,6 @@ package io.mpms.socket;
 
 import cn.jiangzeyin.common.DefaultSystemLog;
 import com.alibaba.fastjson.JSONObject;
-import io.jpom.model.WebSocketMessageModel;
 import io.jpom.system.AgentConfigBean;
 import org.springframework.stereotype.Component;
 
