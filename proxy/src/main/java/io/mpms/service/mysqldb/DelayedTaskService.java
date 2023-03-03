@@ -54,4 +54,12 @@ public interface DelayedTaskService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 查询数据表全部内容
+     *
+     *
+     * @return 数据表内MiniSysLog容
+     */
+    List<DelayedTask> queryAllData();
+
 }
