@@ -35,4 +35,11 @@ public interface MiniSysLogService {
      */
     Integer insert(int level, String content, String extra);
 
+    /**
+     * 新增数据
+     *
+     * @return 影响行数
+     */
+    Integer insertMultiple(List<MiniSysLog> insertList);
+
 }
