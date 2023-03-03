@@ -8,4 +8,5 @@ import io.jpom.model.BaseJsonModel;
  */
 public class NetstatModel extends BaseJsonModel {
     private String protocol;
+    private String receive = StrUtil.DASHED;
 }
