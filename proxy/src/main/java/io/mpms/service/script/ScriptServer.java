@@ -43,4 +43,10 @@ public class ScriptServer extends BaseOperService<ScriptModel> {
         super.addItem(scriptModel);
         scriptModel.saveFile();
     }
+
+    @Override
+    public void updateItem(ScriptModel scriptModel) {
+        super.updateItem(scriptModel);
+        scriptModel.saveFile();
+    }
 }
