@@ -45,4 +45,12 @@ public interface SourceConfigService {
      */
     List<SourceConfig> queryAllByLimit(int offset, int limit);
 
+    /**
+     * 新增数据
+     *
+     * @param sourceconfig 实例对象
+     * @return 实例对象
+     */
+    SourceConfig insert(SourceConfig sourceconfig);
+
 }
