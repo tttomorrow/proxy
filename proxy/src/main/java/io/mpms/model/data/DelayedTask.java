@@ -9,5 +9,5 @@ import java.io.Serializable;
  * @since 2021-10-21 14:34:07
  */
 public class DelayedTask implements Serializable, Comparable<DelayedTask> {
-
+    private static final long serialVersionUID = 530550411236437384L;
 }
