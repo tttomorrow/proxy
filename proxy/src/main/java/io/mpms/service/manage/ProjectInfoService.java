@@ -39,4 +39,19 @@ public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
         }
         return hashSet;
     }
+
+    /**
+     * 修改项目信息
+     *
+     * @param projectInfo 项目信息
+     */
+    @Override
+    public void updateItem(ProjectInfoModel projectInfo) {
+        projectInfo.setModifyTime(DateUtil.now());
+        String userName = BaseAgentController.getNowUserName();
+        if (!StrUtil.DASHED.equals(userName)) {
+            projectInfo.setModifyUser(userName);
+        }
+        super.updateItem(projectInfo);
+    }
 }
