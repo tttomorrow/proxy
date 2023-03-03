@@ -8,7 +8,6 @@ import io.jpom.model.system.SourceConfig;
 import io.jpom.service.mysqldb.MiniSysLogService;
 import io.jpom.service.mysqldb.SourceConfigService;
 import io.jpom.util.CommandUtil;
-import io.jpom.util.FileOperator;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
