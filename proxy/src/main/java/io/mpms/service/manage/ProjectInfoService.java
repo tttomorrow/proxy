@@ -27,4 +27,17 @@ public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
     public ProjectInfoService() {
         super(AgentConfigBean.PROJECT);
     }
+
+    public HashSet<String> getAllGroup() {
+        //获取所有分组
+        List<ProjectInfoModel> projectInfoModels = list();
+        HashSet<String> hashSet = new HashSet<>();
+        if (projectInfoModels == null) {
+            return hashSet;
+        }
+        for (ProjectInfoModel projectInfoModel : projectInfoModels) {
+            hashSet.add(projectInfoModel.getGroup());
+        }
+        return hashSet;
+    }
 }
