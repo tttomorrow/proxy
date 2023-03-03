@@ -1,6 +1,5 @@
 package io.mpms.service.manage;
 
-import io.jpom.system.AgentConfigBean;
 import org.springframework.stereotype.Service;
 
 /**
