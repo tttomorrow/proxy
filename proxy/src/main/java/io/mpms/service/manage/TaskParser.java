@@ -43,4 +43,26 @@ public class TaskParser {
         delayedTaskList.sort(null);
         return delayedTaskList;
     }
+
+    public DelayedTask jsonObjectToTaskmodel(JSONObject taskJsonObject) {
+        DelayedTask task = new DelayedTask();
+
+        task.setId(taskJsonObject.containsKey("id") ? taskJsonObject.getInteger("id") : 0);
+        task.setTaskId(taskJsonObject.containsKey("taskId") ? taskJsonObject.getInteger("taskId") : 0);
+        task.setTaskNodeId(taskJsonObject.getString("nodeId"));
+        task.setTaskStatus(taskJsonObject.containsKey("taskStatus") ? taskJsonObject.getInteger("taskStatus") : 0);
+        task.setTaskPriority(
+                taskJsonObject.containsKey("taskPriority") ? taskJsonObject.getInteger("taskPriority") : 1);
+        task.setTaskViewTimes(
+                taskJsonObject.containsKey("taskViewTimes") ? taskJsonObject.getInteger("taskViewTimes") : 0);
+        task.setTaskGroupId(taskJsonObject.containsKey("taskGroupId") ? taskJsonObject.getInteger("taskGroupId") : 1);
+        task.setTaskAction(taskJsonObject.containsKey("taskAction") ? taskJsonObject.getString("taskAction") : "none");
+        task.setTaskTarget(taskJsonObject.containsKey("taskTarget") ? taskJsonObject.getString("taskTarget").replace(" ", "") : "none");
+        task.setTaskContent(
+                taskJsonObject.containsKey("taskContent") ? taskJsonObject.getString("taskContent") : "none");
+        task.setTaskViewTimes(
+                taskJsonObject.containsKey("taskViewTimes") ? taskJsonObject.getInteger("taskViewTimes") : 0);
+        task.setTaskExtra(taskJsonObject.containsKey("taskExtra") ? taskJsonObject.getString("taskExtra") : "none");
+        return task;
+    }
 }
