@@ -1,7 +1,6 @@
 package io.mpms.service.script;
 
 import cn.hutool.core.io.FileUtil;
-import io.jpom.common.BaseOperService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
