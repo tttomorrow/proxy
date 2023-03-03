@@ -4,7 +4,6 @@ import cn.jiangzeyin.common.DefaultSystemLog;
 import com.alibaba.fastjson.JSONObject;
 import io.jpom.model.data.AgentWhitelist;
 import io.jpom.system.AgentConfigBean;
-import io.jpom.util.JsonFileUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
