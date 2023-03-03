@@ -42,4 +42,9 @@ public interface MiniSysLogService {
      */
     Integer insertMultiple(List<MiniSysLog> insertList);
 
+    /**
+     * 修改数据
+     */
+    MiniSysLog update(int id, int type, String ip, int level, DateTime time, String content, String extra);
+
 }
