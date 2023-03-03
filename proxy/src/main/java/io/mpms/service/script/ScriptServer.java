@@ -2,7 +2,6 @@ package io.mpms.service.script;
 
 import cn.hutool.core.io.FileUtil;
 import io.jpom.common.BaseOperService;
-import io.jpom.model.data.ScriptModel;
 import io.jpom.system.AgentConfigBean;
 import org.springframework.stereotype.Service;
 
