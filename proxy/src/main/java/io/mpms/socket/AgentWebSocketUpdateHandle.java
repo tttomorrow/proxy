@@ -2,6 +2,7 @@ package io.mpms.socket;
 
 import cn.jiangzeyin.common.DefaultSystemLog;
 import com.alibaba.fastjson.JSONObject;
+import io.mpms.model.data.UploadFileModel;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
