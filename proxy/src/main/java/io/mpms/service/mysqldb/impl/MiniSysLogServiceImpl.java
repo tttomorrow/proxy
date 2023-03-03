@@ -99,4 +99,18 @@ public class MiniSysLogServiceImpl implements MiniSysLogService {
         MiniSysLog miniSysLog = new MiniSysLog(level, content, extra);
         return this.minisyslogDao.insert(miniSysLog);
     }
+
+    /**
+     * 新增数据
+     *
+     * @return 影响行数
+     */
+    @Override
+    public Integer insertMultiple(List<MiniSysLog> insertList) {
+        if (insertList.isEmpty()) {
+            return -1;
+        } else {
+            return this.minisyslogDao.insertMultiple(insertList);
+        }
+    }
 }
