@@ -19,4 +19,5 @@ import java.io.InputStream;
 public class TomcatInfoModel extends BaseModel {
 
     private String path;
+    private int port;
 }
