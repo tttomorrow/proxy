@@ -62,4 +62,16 @@ public class sourceConfigServiceImpl implements SourceConfigService {
         this.sourceconfigDao.insert(sourceconfig);
         return sourceconfig;
     }
+
+    /**
+     * 修改数据
+     *
+     * @param sourceconfig 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public SourceConfig update(SourceConfig sourceconfig) {
+        this.sourceconfigDao.update(sourceconfig);
+        return this.queryById(sourceconfig.getId());
+    }
 }
