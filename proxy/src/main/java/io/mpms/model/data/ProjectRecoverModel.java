@@ -9,5 +9,8 @@ import io.jpom.model.BaseModel;
 
  */
 public class ProjectRecoverModel extends BaseModel {
-
+    /**
+     * 删除人
+     */
+    private String delUser;
 }
