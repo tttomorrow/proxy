@@ -60,4 +60,12 @@ public interface SourceConfigService {
      */
     SourceConfig update(SourceConfig sourceconfig);
 
+    /**
+     * 通过主键删除数据
+     *
+     * @param id 主键
+     * @return 是否成功
+     */
+    boolean deleteById(Integer id);
+
 }
