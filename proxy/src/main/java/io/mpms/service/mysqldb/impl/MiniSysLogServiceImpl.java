@@ -57,4 +57,48 @@ public class MiniSysLogServiceImpl implements MiniSysLogService {
         List<MiniSysLog> logList = this.minisyslogDao.queryAll();
         return logList;
     }
+
+    /**
+     * 新增数据
+     *
+     * @return 影响行数
+     */
+    @Override
+    public Integer insert(int level, String content, String extra) {
+        if (MiniSysLog.getIp() == null || MiniSysLog.getIp() == ""){
+            try{
+                Enumeration<NetworkInterface> enumeration = NetworkInterface.getNetworkInterfaces();
+                // 遍历网络接口
+                while (enumeration.hasMoreElements()) {
+                    NetworkInterface face = enumeration.nextElement();
+                    if (face.isLoopback() || face.isVirtual()) { //
+                        continue;
+                    }
+                    Enumeration<InetAddress> inets = face.getInetAddresses();
+                    // 遍历网络地址
+                    while (inets.hasMoreElements()) {
+                        InetAddress addr = inets.nextElement();
+                        if (addr.isLoopbackAddress() || !addr.isSiteLocalAddress() || addr.isAnyLocalAddress()) {
+                            continue;
+                        }
+                        // 获取本机ip地址
+                        String hostAddress = addr.getHostAddress();
+                        if(hostAddress != null && hostAddress != ""){
+                            MiniSysLog.setIp(hostAddress);
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        // 二次校验是否为空，仍为设置默认值，保证显示的时候肯定有ip
+        if (MiniSysLog.getIp() == null || MiniSysLog.getIp() == ""){
+            MiniSysLog.setIp("127.0.0.1");
+        }
+        MiniSysLog miniSysLog = new MiniSysLog(level, content, extra);
+        return this.minisyslogDao.insert(miniSysLog);
+    }
 }
