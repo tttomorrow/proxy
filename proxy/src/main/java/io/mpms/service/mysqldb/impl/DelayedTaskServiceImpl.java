@@ -60,4 +60,15 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
         this.delayedTaskDao.setLastInsertTaskId();
         return delayedTask;
     }
+
+    /**
+     * 修改数据
+     *
+     * @param delayedTask 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public int update(DelayedTask delayedTask) {
+        return this.delayedTaskDao.update(delayedTask);
+    }
 }
