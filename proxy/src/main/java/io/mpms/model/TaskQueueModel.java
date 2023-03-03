@@ -15,5 +15,5 @@ import java.util.concurrent.PriorityBlockingQueue;
 public class TaskQueueModel {
 
 
-
+    private static volatile TaskQueueModel taskQueueInstance;
 }
