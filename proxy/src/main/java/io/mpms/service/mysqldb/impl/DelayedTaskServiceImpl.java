@@ -26,4 +26,15 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     private final TaskParser taskParser = new TaskParser();
 
     private String nodeId;
+
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param id 主键
+     * @return 实例对象
+     */
+    @Override
+    public DelayedTask queryById(Integer id) {
+        return this.delayedTaskDao.queryById(this.nodeId, id);
+    }
 }
