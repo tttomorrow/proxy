@@ -62,4 +62,6 @@ public interface DelayedTaskService {
      */
     List<DelayedTask> queryAllData();
 
+    DelayedTask getOneNotStartedTask();
+
 }
