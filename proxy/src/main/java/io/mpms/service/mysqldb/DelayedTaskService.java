@@ -39,4 +39,12 @@ public interface DelayedTaskService {
      */
     DelayedTask insert(DelayedTask delayedtask);
 
+    /**
+     * 修改数据
+     *
+     * @param delayedtask 实例对象
+     * @return 实例对象
+     */
+    int update(DelayedTask delayedtask);
+
 }
