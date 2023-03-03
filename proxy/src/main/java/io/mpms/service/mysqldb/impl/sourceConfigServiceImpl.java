@@ -1,7 +1,6 @@
 package io.mpms.service.mysqldb.impl;
 
 import io.jpom.dao.SourceConfigDao;
-import io.jpom.model.system.SourceConfig;
 import io.jpom.service.mysqldb.SourceConfigService;
 import org.springframework.stereotype.Service;
 
