@@ -50,4 +50,16 @@ public class sourceConfigServiceImpl implements SourceConfigService {
     public List<SourceConfig> queryAllByLimit(int offset, int limit) {
         return this.sourceconfigDao.queryAllByLimit(offset, limit);
     }
+
+    /**
+     * 新增数据
+     *
+     * @param sourceconfig 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public SourceConfig insert(SourceConfig sourceconfig) {
+        this.sourceconfigDao.insert(sourceconfig);
+        return sourceconfig;
+    }
 }
