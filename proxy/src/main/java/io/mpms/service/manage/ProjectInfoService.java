@@ -68,4 +68,10 @@ public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
         }
         super.updateItem(projectInfo);
     }
+
+    @Override
+    public void addItem(ProjectInfoModel projectInfoModel) {
+        projectInfoModel.setCreateTime(DateUtil.now());
+        super.addItem(projectInfoModel);
+    }
 }
