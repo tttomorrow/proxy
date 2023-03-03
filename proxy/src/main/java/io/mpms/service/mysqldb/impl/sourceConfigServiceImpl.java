@@ -35,4 +35,9 @@ public class sourceConfigServiceImpl implements SourceConfigService {
     public List<SourceConfig> selectAll(){
         return this.sourceconfigDao.selectAll();
     }
+
+    @Override
+    public boolean isFoundByEntity(SourceConfig sourceconfig) {
+        return !sourceconfigDao.queryAll(sourceconfig).isEmpty();
+    }
 }
