@@ -31,4 +31,12 @@ public interface DelayedTaskService {
      */
     List<DelayedTask> queryAllByLimit(int offset, int limit);
 
+    /**
+     * 新增数据
+     *
+     * @param delayedtask 实例对象
+     * @return 实例对象
+     */
+    DelayedTask insert(DelayedTask delayedtask);
+
 }
