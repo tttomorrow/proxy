@@ -1,6 +1,7 @@
 package io.mpms.service.mysqldb;
 
 import cn.hutool.core.date.DateTime;
+import io.mpms.model.data.MiniSysLog;
 
 import java.util.List;
 
