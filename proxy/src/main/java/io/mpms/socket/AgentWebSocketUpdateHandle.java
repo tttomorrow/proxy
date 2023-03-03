@@ -2,7 +2,6 @@ package io.mpms.socket;
 
 import cn.jiangzeyin.common.DefaultSystemLog;
 import com.alibaba.fastjson.JSONObject;
-import io.jpom.common.JpomManifest;
 import io.jpom.model.AgentFileModel;
 import io.jpom.model.WebSocketMessageModel;
 import io.jpom.system.AgentConfigBean;
