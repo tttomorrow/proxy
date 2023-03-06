@@ -74,4 +74,26 @@ public class ProjectInfoService extends BaseOperService<ProjectInfoModel> {
         projectInfoModel.setCreateTime(DateUtil.now());
         super.addItem(projectInfoModel);
     }
+
+    /**
+     * 查看项目控制台日志文件大小
+     *
+     * @param projectInfoModel 项目
+     * @param copyItem  副本
+     * @return 文件大小
+     */
+    public String getLogSize(ProjectInfoModel projectInfoModel, ProjectInfoModel.JavaCopyItem copyItem) {
+        if (projectInfoModel == null) {
+            return null;
+        }
+        File file = copyItem == null ? new File(projectInfoModel.getLog()) : projectInfoModel.getLog(copyItem);
+        if (file.exists()) {
+            long fileSize = file.length();
+            if (fileSize <= 0) {
+                return null;
+            }
+            return FileUtil.readableFileSize(fileSize);
+        }
+        return null;
+    }
 }
