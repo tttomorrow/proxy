@@ -16,4 +16,8 @@ public class TaskQueueModel {
 
 
     private static volatile TaskQueueModel taskQueueInstance;
+
+    private TaskQueueModel() {
+
+    }
 }
