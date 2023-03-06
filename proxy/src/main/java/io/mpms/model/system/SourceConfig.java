@@ -13,4 +13,8 @@ public class SourceConfig implements Serializable {
     private static final long serialVersionUID = 515241386935083527L;
 
     private Integer id;
+
+    private String osVersion;
+
+    private String arch;
 }
