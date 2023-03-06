@@ -71,4 +71,15 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     public int update(DelayedTask delayedTask) {
         return this.delayedTaskDao.update(delayedTask);
     }
+
+    /**
+     * 通过主键删除数据
+     *
+     * @param id 主键
+     * @return 是否成功
+     */
+    @Override
+    public boolean deleteById(Integer id) {
+        return this.delayedTaskDao.deleteById(this.nodeId, id) > 0;
+    }
 }
