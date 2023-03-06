@@ -14,4 +14,9 @@ public class SourcePackageInfoVo implements Serializable{
      * 版本
      */
     private String Version;
+
+    /**
+     * 架构
+     */
+    private String Architecture;
 }
