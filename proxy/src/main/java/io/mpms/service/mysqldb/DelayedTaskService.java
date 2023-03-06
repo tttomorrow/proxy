@@ -64,4 +64,6 @@ public interface DelayedTaskService {
 
     DelayedTask getOneNotStartedTask();
 
+    boolean deleteTaskById(Integer id);
+
 }
