@@ -22,4 +22,8 @@ public class ProcessModel extends BaseJsonModel {
      * 进程名
      */
     private String command;
+    /**
+     * 运行状态
+     */
+    private String status;
 }
