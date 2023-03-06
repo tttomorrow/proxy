@@ -74,4 +74,15 @@ public class sourceConfigServiceImpl implements SourceConfigService {
         this.sourceconfigDao.update(sourceconfig);
         return this.queryById(sourceconfig.getId());
     }
+
+    /**
+     * 通过主键删除数据
+     *
+     * @param id 主键
+     * @return 是否成功
+     */
+    @Override
+    public boolean deleteById(Integer id) {
+        return this.sourceconfigDao.deleteById(id) > 0;
+    }
 }
