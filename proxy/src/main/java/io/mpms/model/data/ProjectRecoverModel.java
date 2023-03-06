@@ -17,4 +17,8 @@ public class ProjectRecoverModel extends BaseModel {
      * 删除时间
      */
     private String delTime;
+    /**
+     * 删除的对应项目信息
+     */
+    private ProjectInfoModel projectInfoModel;
 }
