@@ -29,4 +29,9 @@ import java.util.Date;
 public class CertModel extends BaseModel {
 
     private static final String KEY = "Jpom 管理系统";
+
+    /**
+     * 证书文件
+     */
+    private String cert;
 }
