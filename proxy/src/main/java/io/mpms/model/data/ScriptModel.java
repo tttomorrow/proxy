@@ -25,4 +25,8 @@ public class ScriptModel extends BaseModel {
      * 最后修改时间
      */
     private String modifyTime;
+    /**
+     * 脚本内容
+     */
+    private String context;
 }
