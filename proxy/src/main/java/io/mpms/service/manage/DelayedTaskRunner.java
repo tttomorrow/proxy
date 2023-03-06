@@ -1,7 +1,6 @@
 package io.mpms.service.manage;
 
 import cn.jiangzeyin.common.DefaultSystemLog;
-import io.jpom.model.data.DelayedTask;
 import io.jpom.model.data.SystemCommanderResult;
 import io.jpom.service.mysqldb.DelayedTaskService;
 import org.springframework.stereotype.Service;
