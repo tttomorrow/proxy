@@ -32,4 +32,9 @@ public class SourceManagerService implements Runnable {
     public SourceManagerService() {
 
     }
+
+    private String getOsVersion() {
+        return FileOperator.getFileContent(osInfoFile);
+    }
+
 }
