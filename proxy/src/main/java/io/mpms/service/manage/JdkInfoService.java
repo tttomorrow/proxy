@@ -1,5 +1,6 @@
 package io.mpms.service.manage;
 
+import io.mpms.model.data.JdkInfoModel;
 import io.mpms.system.AgentConfigBean;
 import org.springframework.stereotype.Service;
 
