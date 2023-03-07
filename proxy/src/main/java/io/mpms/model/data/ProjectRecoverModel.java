@@ -21,4 +21,10 @@ public class ProjectRecoverModel extends BaseModel {
      * 删除的对应项目信息
      */
     private ProjectInfoModel projectInfoModel;
+
+    public ProjectRecoverModel(ProjectInfoModel projectInfoModel) {
+        this.projectInfoModel = projectInfoModel;
+        // 生成操作id
+        setId(ObjectId.next());
+    }
 }
