@@ -29,4 +29,8 @@ public class ScriptModel extends BaseModel {
      * 脚本内容
      */
     private String context;
+
+    public String getLastRunUser() {
+        return StrUtil.emptyToDefault(lastRunUser, StrUtil.DASHED);
+    }
 }
