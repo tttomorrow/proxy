@@ -19,4 +19,8 @@ public class SourcePackageInfoVo implements Serializable{
      * 架构
      */
     private String Architecture;
+
+    public String getPackage() {
+        return Package;
+    }
 }
