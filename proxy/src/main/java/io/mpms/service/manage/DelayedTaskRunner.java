@@ -87,4 +87,8 @@ public class DelayedTaskRunner implements Runnable {
     public String getNodeId() {
         return nodeId;
     }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
 }
