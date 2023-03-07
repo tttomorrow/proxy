@@ -18,4 +18,8 @@ public class JdkInfoModel extends BaseModel {
      * jdk 版本
      */
     private String version;
+
+    public String getPath() {
+        return path;
+    }
 }
