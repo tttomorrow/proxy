@@ -75,4 +75,12 @@ public class WhitelistDirectoryService extends BaseDataService {
 
         return agentWhitelist.getCertificate();
     }
+
+    public boolean checkCertificateDirectory(String path) {
+        List<String> list = getCertificateDirectory();
+        if (list == null) {
+            return false;
+        }
+        return AgentWhitelist.checkPath(list, path);
+    }
 }
