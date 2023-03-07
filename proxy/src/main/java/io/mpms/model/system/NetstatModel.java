@@ -10,4 +10,5 @@ public class NetstatModel extends BaseJsonModel {
     private String protocol;
     private String receive = StrUtil.DASHED;
     private String send = StrUtil.DASHED;
+    private String local;
 }
