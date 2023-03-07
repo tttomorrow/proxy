@@ -26,4 +26,8 @@ public class ProcessModel extends BaseJsonModel {
      * 运行状态
      */
     private String status;
+    /**
+     * 进程仍然在使用的，没被交换出物理内存部分的大小
+     */
+    private String res;
 }
