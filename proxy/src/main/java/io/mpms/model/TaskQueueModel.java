@@ -20,4 +20,16 @@ public class TaskQueueModel {
     private TaskQueueModel() {
 
     }
+
+    public static TaskQueueModel getInstance() {
+        if (taskQueueInstance == null) {
+            synchronized (TaskQueueModel.class) {
+                if (taskQueueInstance == null) {
+                    taskQueueInstance = new TaskQueueModel();
+                }
+            }
+        }
+
+        return taskQueueInstance;
+    }
 }
