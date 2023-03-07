@@ -12,4 +12,6 @@ public class DelayedTask implements Serializable, Comparable<DelayedTask> {
     private static final long serialVersionUID = 530550411236437384L;
 
     private Integer id;
+
+    private Integer taskPriority;
 }
