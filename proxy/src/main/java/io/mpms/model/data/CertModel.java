@@ -34,4 +34,8 @@ public class CertModel extends BaseModel {
      * 证书文件
      */
     private String cert;
+    /**
+     * 私钥
+     */
+    private String key;
 }
