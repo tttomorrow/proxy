@@ -32,4 +32,5 @@ public class ProjectInfoModel extends BaseModel {
      */
     private String group;
     private String mainClass;
+    private String lib;
 }
