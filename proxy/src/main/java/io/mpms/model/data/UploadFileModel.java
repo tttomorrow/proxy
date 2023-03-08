@@ -15,4 +15,8 @@ public class UploadFileModel extends BaseModel {
     private long completeSize = 0;
     private String savePath;
     private String version;
+
+    public long getSize() {
+        return size;
+    }
 }
