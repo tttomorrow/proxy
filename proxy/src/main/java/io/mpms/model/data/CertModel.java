@@ -38,4 +38,8 @@ public class CertModel extends BaseModel {
      * 私钥
      */
     private String key;
+    /**
+     * 证书到期时间
+     */
+    private long expirationTime;
 }
