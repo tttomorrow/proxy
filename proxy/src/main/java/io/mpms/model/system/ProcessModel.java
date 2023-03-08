@@ -30,4 +30,8 @@ public class ProcessModel extends BaseJsonModel {
      * 进程仍然在使用的，没被交换出物理内存部分的大小
      */
     private String res;
+    /**
+     * 所有者
+     */
+    private String user;
 }
