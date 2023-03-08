@@ -18,4 +18,6 @@ public class MiniSysLog implements Serializable {
      * 节点还是平台
      */
     private Integer type;
+
+    private static String ip;
 }
