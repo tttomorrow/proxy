@@ -37,4 +37,15 @@ public class SourceManagerService implements Runnable {
         return FileOperator.getFileContent(osInfoFile);
     }
 
+    private SourceConfig fillBySourceStr(String sourcestr) {
+        SourceConfig sourceconfig = new SourceConfig();
+        String[] sourceList = sourcestr.split(" ");
+        sourceconfig.setOsVersion(getOsVersion().split(" ")[1]);
+        sourceconfig.setArch(SystemUtil.getOsInfo().getArch());
+        sourceconfig.setCodename(sourceList[2]);
+        sourceconfig.setUri(sourceList[1]);
+        sourceconfig.setPackageType(sourceList[0]);
+        sourceconfig.setComponents(sourcestr.substring(sourcestr.indexOf(sourceList[3])));
+        return sourceconfig;
+    }
 }
