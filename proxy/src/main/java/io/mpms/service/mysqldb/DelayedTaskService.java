@@ -66,4 +66,6 @@ public interface DelayedTaskService {
 
     boolean deleteTaskById(Integer id);
 
+    JSONObject addAllTask(String taskList);
+
 }
