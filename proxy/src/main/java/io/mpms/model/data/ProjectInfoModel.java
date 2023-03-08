@@ -33,4 +33,8 @@ public class ProjectInfoModel extends BaseModel {
     private String group;
     private String mainClass;
     private String lib;
+    /**
+     * 白名单目录
+     */
+    private String whitelistDirectory;
 }
