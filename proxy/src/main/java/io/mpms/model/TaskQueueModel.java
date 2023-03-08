@@ -32,4 +32,19 @@ public class TaskQueueModel {
 
         return taskQueueInstance;
     }
+
+    /*
+     * 任务队列
+     */
+    private final PriorityBlockingQueue<DelayedTaskModel> taskModels = new PriorityBlockingQueue<>();
+
+    private DelayedTaskModel findTask(Integer id) {
+
+        for (DelayedTaskModel item : taskModels) {
+            if (item.getId().equals(id)) {
+                return item;
+            }
+        }
+        return null;
+    }
 }
