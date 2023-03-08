@@ -82,4 +82,9 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     public boolean deleteById(Integer id) {
         return this.delayedTaskDao.deleteById(this.nodeId, id) > 0;
     }
+
+    @Override
+    public List<DelayedTask> queryAllData() {
+        return this.delayedTaskDao.queryAllData(this.nodeId);
+    }
 }
