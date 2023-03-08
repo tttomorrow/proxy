@@ -22,4 +22,5 @@ public class TomcatInfoModel extends BaseModel {
     private int port;
     private int status;
     private String appBase;
+    private String creator;
 }
