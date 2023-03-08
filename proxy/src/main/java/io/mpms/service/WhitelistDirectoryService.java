@@ -83,4 +83,14 @@ public class WhitelistDirectoryService extends BaseDataService {
         }
         return AgentWhitelist.checkPath(list, path);
     }
+
+    /**
+     * 保存白名单
+     *
+     * @param jsonObject 实体
+     */
+    public void saveWhitelistDirectory(AgentWhitelist jsonObject) {
+        String path = getDataFilePath(AgentConfigBean.WHITELIST_DIRECTORY);
+        JsonFileUtil.saveJson(path, jsonObject.toJson());
+    }
 }
