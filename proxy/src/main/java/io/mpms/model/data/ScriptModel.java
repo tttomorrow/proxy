@@ -33,4 +33,8 @@ public class ScriptModel extends BaseModel {
     public String getLastRunUser() {
         return StrUtil.emptyToDefault(lastRunUser, StrUtil.DASHED);
     }
+
+    public void setLastRunUser(String lastRunUser) {
+        this.lastRunUser = lastRunUser;
+    }
 }
