@@ -22,4 +22,9 @@ public class DelayedTaskModel implements Comparable<DelayedTaskModel> {
      * 节点id，由前端提供
      */
     private Integer nodeId;
+
+    /*
+     * 任务状态，“0、1、2、3”
+     */
+    private Integer taskStatus;
 }
