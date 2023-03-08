@@ -27,4 +27,8 @@ public class ProjectRecoverModel extends BaseModel {
         // 生成操作id
         setId(ObjectId.next());
     }
+
+    public ProjectRecoverModel() {
+    }
+
 }
