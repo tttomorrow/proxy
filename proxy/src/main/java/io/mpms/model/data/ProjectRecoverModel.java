@@ -31,4 +31,7 @@ public class ProjectRecoverModel extends BaseModel {
     public ProjectRecoverModel() {
     }
 
+    public ProjectInfoModel getProjectInfoModel() {
+        return projectInfoModel;
+    }
 }
