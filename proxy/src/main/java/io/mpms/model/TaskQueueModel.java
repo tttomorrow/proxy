@@ -47,4 +47,9 @@ public class TaskQueueModel {
         }
         return null;
     }
+
+    public boolean addTask(DelayedTaskModel task) {
+        task.setTaskStatus(0);
+        return taskModels.offer(task);
+    }
 }
