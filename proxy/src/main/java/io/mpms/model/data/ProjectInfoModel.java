@@ -37,4 +37,5 @@ public class ProjectInfoModel extends BaseModel {
      * 白名单目录
      */
     private String whitelistDirectory;
+    private String log;
 }
