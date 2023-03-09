@@ -26,4 +26,8 @@ public class JdkInfoModel extends BaseModel {
     public void setPath(String path) {
         this.path = path;
     }
+
+    public String getVersion() {
+        return version;
+    }
 }
