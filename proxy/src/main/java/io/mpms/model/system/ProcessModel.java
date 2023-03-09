@@ -34,4 +34,8 @@ public class ProcessModel extends BaseJsonModel {
      * 所有者
      */
     private String user;
+    /**
+     * 时间总计
+     */
+    private String time;
 }
