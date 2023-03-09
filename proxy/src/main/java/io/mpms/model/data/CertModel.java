@@ -42,4 +42,8 @@ public class CertModel extends BaseModel {
      * 证书到期时间
      */
     private long expirationTime;
+    /**
+     * 证书生效日期
+     */
+    private long effectiveTime;
 }
