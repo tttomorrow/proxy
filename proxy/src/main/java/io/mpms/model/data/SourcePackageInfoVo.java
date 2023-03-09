@@ -27,4 +27,8 @@ public class SourcePackageInfoVo implements Serializable{
     public void setPackage(String aPackage) {
         Package = aPackage;
     }
+
+    public String getVersion() {
+        return Version;
+    }
 }
