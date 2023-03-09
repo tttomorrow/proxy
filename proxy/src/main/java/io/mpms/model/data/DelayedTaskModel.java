@@ -27,4 +27,9 @@ public class DelayedTaskModel implements Comparable<DelayedTaskModel> {
      * 任务状态，“0、1、2、3”
      */
     private Integer taskStatus;
+
+    /*
+     * 任务优先级，“0、1、2...”
+     */
+    private Integer taskPriority;
 }
