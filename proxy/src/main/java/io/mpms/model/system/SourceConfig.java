@@ -21,4 +21,6 @@ public class SourceConfig implements Serializable {
     private String packageType;
 
     private String uri;
+
+    private String codename;
 }
