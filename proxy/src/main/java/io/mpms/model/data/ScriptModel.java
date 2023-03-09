@@ -37,4 +37,8 @@ public class ScriptModel extends BaseModel {
     public void setLastRunUser(String lastRunUser) {
         this.lastRunUser = lastRunUser;
     }
+
+    public String getModifyTime() {
+        return modifyTime;
+    }
 }
