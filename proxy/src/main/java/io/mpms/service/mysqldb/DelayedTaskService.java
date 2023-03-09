@@ -68,4 +68,7 @@ public interface DelayedTaskService {
 
     JSONObject addAllTask(String taskList);
 
+    JSONArray getTaskStatus();
+
+
 }
