@@ -20,4 +20,6 @@ public class MiniSysLog implements Serializable {
     private Integer type;
 
     private static String ip;
+
+    private String time;
 }
