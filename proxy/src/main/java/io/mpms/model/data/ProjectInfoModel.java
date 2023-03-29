@@ -38,4 +38,9 @@ public class ProjectInfoModel extends BaseModel {
      */
     private String whitelistDirectory;
     private String log;
+
+    /**
+     * 日志目录
+     */
+    private String logPath;
 }
