@@ -32,4 +32,9 @@ public class DelayedTaskModel implements Comparable<DelayedTaskModel> {
      * 任务优先级，“0、1、2...”
      */
     private Integer taskPriority;
+
+    /*
+     * 任务group id，由前端提供
+     */
+    private Integer taskGroupId;
 }
