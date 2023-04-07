@@ -43,4 +43,9 @@ public class ProjectInfoModel extends BaseModel {
      * 日志目录
      */
     private String logPath;
+
+    /**
+     * jvm 参数
+     */
+    private String jvm;
 }
