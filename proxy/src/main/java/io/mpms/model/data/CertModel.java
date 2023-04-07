@@ -46,4 +46,8 @@ public class CertModel extends BaseModel {
      * 证书生效日期
      */
     private long effectiveTime;
+    /**
+     * 绑定域名
+     */
+    private String domain;
 }
