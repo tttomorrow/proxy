@@ -24,4 +24,6 @@ public class MiniSysLog implements Serializable {
     private String time;
 
     private String content;
+
+    private Integer level;
 }
