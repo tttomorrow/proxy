@@ -37,4 +37,9 @@ public class DelayedTaskModel implements Comparable<DelayedTaskModel> {
      * 任务group id，由前端提供
      */
     private Integer taskGroupId;
+
+    /*
+     * 任务行为，“install、uninstall、update”
+     */
+    private String taskAction;
 }
