@@ -13,7 +13,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * top命令管理，保证整个服务器只获取一个top命令
