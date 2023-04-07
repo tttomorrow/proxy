@@ -52,4 +52,8 @@ public class TaskQueueModel {
         task.setTaskStatus(0);
         return taskModels.offer(task);
     }
+
+    public DelayedTaskModel getTask(Integer id) {
+        return findTask(id);
+    }
 }
