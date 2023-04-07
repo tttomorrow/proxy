@@ -18,4 +18,6 @@ public class DelayedTask implements Serializable, Comparable<DelayedTask> {
     private String taskAction;
 
     private String taskTarget;
+
+    private Integer taskStatus;
 }
