@@ -71,4 +71,6 @@ public interface DelayedTaskService {
     JSONArray getTaskStatus();
 
     String getNodeId();
+
+    void setNodeId(String nodeId);
 }
