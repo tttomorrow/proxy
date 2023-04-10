@@ -1,6 +1,7 @@
 package io.mpms.service.mysqldb.impl;
 
 import cn.hutool.core.date.DateTime;
+import io.mpms.service.mysqldb.MiniSysLogService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
