@@ -50,4 +50,8 @@ public class CertModel extends BaseModel {
      * 绑定域名
      */
     private String domain;
+    /**
+     * 白名单路径
+     */
+    private String whitePath;
 }
