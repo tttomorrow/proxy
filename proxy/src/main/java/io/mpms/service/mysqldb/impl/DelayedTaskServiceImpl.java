@@ -86,4 +86,9 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     public List<DelayedTask> queryAllData() {
         return this.delayedTaskDao.queryAllData(this.nodeId);
     }
+
+    @Override
+    public DelayedTask getOneNotStartedTask() {
+        return delayedTaskDao.queryByStatusEq0or1(this.nodeId);
+    }
 }
