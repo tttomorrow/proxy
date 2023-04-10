@@ -13,6 +13,7 @@ import cn.jiangzeyin.common.PreLoadMethod;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import io.mpms.system.AgentAuthorize;
+import io.mpms.system.AgentConfigBean;
 import io.mpms.system.AgentExtConfigBean;
 
 import java.io.File;
