@@ -38,4 +38,8 @@ public class ProcessModel extends BaseJsonModel {
      * 时间总计
      */
     private String time;
+    /**
+     * 优先级
+     */
+    private String pr = StrUtil.DASHED;
 }
