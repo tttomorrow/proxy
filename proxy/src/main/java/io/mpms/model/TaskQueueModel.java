@@ -56,4 +56,13 @@ public class TaskQueueModel {
     public DelayedTaskModel getTask(Integer id) {
         return findTask(id);
     }
+
+    public boolean addTasks(List<DelayedTaskModel> tasks) {
+        for (DelayedTaskModel item : tasks) {
+            if (!addTask(item)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
