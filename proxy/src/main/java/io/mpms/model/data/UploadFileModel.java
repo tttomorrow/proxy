@@ -23,4 +23,8 @@ public class UploadFileModel extends BaseModel {
     public void setSize(long size) {
         this.size = size;
     }
+
+    public long getCompleteSize() {
+        return completeSize;
+    }
 }
