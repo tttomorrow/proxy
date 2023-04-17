@@ -31,4 +31,8 @@ public class SourcePackageInfoVo implements Serializable{
     public String getVersion() {
         return Version;
     }
+
+    public void setVersion(String version) {
+        Version = version;
+    }
 }
