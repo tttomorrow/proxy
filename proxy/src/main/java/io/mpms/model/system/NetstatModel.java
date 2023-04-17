@@ -13,4 +13,5 @@ public class NetstatModel extends BaseJsonModel {
     private String local;
     private String foreign;
     private String status;
+    private String name;
 }
