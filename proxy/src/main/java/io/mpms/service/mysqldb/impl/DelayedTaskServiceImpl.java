@@ -91,4 +91,8 @@ public class DelayedTaskServiceImpl implements DelayedTaskService {
     public DelayedTask getOneNotStartedTask() {
         return delayedTaskDao.queryByStatusEq0or1(this.nodeId);
     }
+
+    public boolean deleteTaskById(Integer id) {
+        return delayedTaskDao.deleteById(this.nodeId, id) > 0;
+    }
 }
